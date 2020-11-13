@@ -3,10 +3,17 @@ body {
   margin: 0;
   padding: 0;
 }
+html {
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .page {
@@ -15,5 +22,29 @@ body {
   &__title {
     margin: 0 0 30px;
     text-align: left;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  height: 30px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #FFFFFF;
+  font-family: var(--font-main);
+  border: none;
+  border-radius: 3px;
+
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, .3);
   }
 }

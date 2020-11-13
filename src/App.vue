@@ -9,15 +9,8 @@
 </template>
 
 <style lang="scss">
+@import "./assets/style/variables";
 @import "./assets/style/base";
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
 .app {
   min-height: 100vh;
