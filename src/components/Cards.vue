@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
-    <template v-for="i in 5" :key="i">
-      <Card class="cards__card"/>
+    <template v-for="item in cards" :key="item.id">
+      <Card class="cards__card" :value="item"/>
     </template>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
     Card,
   },
   props: {
-    msg: String,
+    cards: Array,
   },
 };
 </script>
