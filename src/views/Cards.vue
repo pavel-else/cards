@@ -21,13 +21,8 @@ export default {
     Cards,
   },
   setup() {
-    const cards = ref([
-      { id: 1, title: 'Title', description: 'Description' },
-      { id: 2, title: 'Title', description: 'Description' },
-      { id: 3, title: 'Title', description: 'Description' },
-      { id: 4, title: 'Title', description: 'Description' },
-      { id: 5, title: 'Title', description: 'Description' },
-    ]);
+    console.log('TH', this);
+    const cards = ref(this.$store.getters.cards);
 
     return {
       cards,
