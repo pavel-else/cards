@@ -13,6 +13,7 @@
 
 <script>
 import { ref } from 'vue';
+import store from '@/store';
 
 import Cards from '@/components/Cards.vue';
 
@@ -21,8 +22,8 @@ export default {
     Cards,
   },
   setup() {
-    console.log('TH', this);
-    const cards = ref(this.$store.getters.cards);
+    console.log('TH', store.getters.cards);
+    const cards = ref(store.getters.cards);
 
     return {
       cards,

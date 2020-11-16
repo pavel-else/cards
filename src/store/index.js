@@ -10,7 +10,7 @@ if (!localStorage.getItem('isFirstInit')) {
   localStorage.setItem('isFirstInits', true);
 }
 
-export default createStore({
+const store = createStore({
   state: {
     cards: JSON.parse(localStorage.getItem('cards')),
   },
@@ -24,3 +24,5 @@ export default createStore({
   actions: {
   },
 });
+
+export default store;
