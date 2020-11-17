@@ -1,12 +1,22 @@
 <template>
   <div class="app">
-    <header class="app__header"></header>
+    <HeaderBlock class="app__header"></HeaderBlock>
     <main class="app__main">
       <router-view />
     </main>
     <footer class="app__footer"></footer>
   </div>
 </template>
+
+<script>
+import Header from '@/components/Header.vue';
+
+export default {
+  components: {
+    HeaderBlock: Header,
+  },
+};
+</script>
 
 <style lang="scss">
 @import "./assets/style/variables";

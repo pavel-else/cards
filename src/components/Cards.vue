@@ -1,14 +1,24 @@
 <template>
-  <draggable class="dragArea list-group w-full cards" v-model="inCards" @change="changeCards">
-    <template v-for="item in inCards" :key="item.id">
-      <Card class="cards__card" :value="item"/>
-    </template>
-  </draggable>
+  <template v-if="settings.draggable">
+    <draggable class="dragArea list-group w-full cards" v-model="inCards" @change="changeCards">
+      <template v-for="item in inCards" :key="item.id">
+        <Card class="cards__card" :value="item"/>
+      </template>
+    </draggable>
+  </template>
+  <template v-else>
+    <div class="cards">
+      <template v-for="item in inCards" :key="item.id">
+        <Card class="cards__card" :value="item"/>
+      </template>
+    </div>
+  </template>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import store from '@/store';
+// https://vuejsexamples.com/a-simple-vue-3-drag-and-drop-component/
 import { VueDraggableNext } from 'vue-draggable-next';
 import Card from '@/components/Card.vue';
 
@@ -25,12 +35,12 @@ export default {
 
     return {
       inCards: ref(cards),
+      settings: computed(() => store.getters.settings),
     };
   },
   methods: {
-    changeCards(cards) {
+    changeCards() {
       store.dispatch('saveCards', this.inCards);
-      console.log('E', cards);
     },
   },
 };

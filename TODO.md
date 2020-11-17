@@ -1,6 +1,5 @@
 # TODO
 
-- drug&drop - on|off
 - текст внутри карточки не должен выходить за границы карточки
 - просмотр карточки
 - удаление
@@ -9,5 +8,6 @@
 ### Деплой
 
 ## DONE
+- drag&drop - on|off
+- drag&drop: init
 - save to store (before destroy)
-- drug&drop: init

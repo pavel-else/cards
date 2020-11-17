@@ -1,10 +1,14 @@
 import { createStore } from 'vuex';
 import initStorage from '@/functions/initStorage';
 import saveToStorage from '@/functions/saveToStorage';
+import settings from '@/store/modules/settings';
 
 initStorage();
 
 const store = createStore({
+  modules: {
+    settings,
+  },
   state: {
     cards: JSON.parse(localStorage.getItem('cards')),
   },
