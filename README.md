@@ -4,6 +4,8 @@
 
 Работает на Vue3
 
+http://f0487783.xsph.ru/cards
+
 ## Project setup
 ```
 npm install
