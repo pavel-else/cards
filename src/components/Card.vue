@@ -23,6 +23,7 @@ export default {
 
 <style scoped lang="scss">
 .card {
+  max-width: 220px;
   padding: 10px 10px 10px;
   border: 1px solid var(--color-black);
   border-radius: 4px;
@@ -31,6 +32,14 @@ export default {
     font-size: 16px;
     font-weight: 400;
     margin: 0 0 20px;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis;
+  }
+  &__description {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis;
   }
 }
 </style>

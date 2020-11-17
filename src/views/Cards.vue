@@ -2,7 +2,7 @@
   <div class="page">
     <div class="container">
       <div class="wrap">
-        <h1 class="page__title">Cards</h1>
+        <h1 class="page__title">Список всех карточек</h1>
         <router-link class="btn btn-primary" to="/cards/create">Добавить</router-link>
       </div>
 

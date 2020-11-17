@@ -6,7 +6,8 @@ body {
 html,
 a,
 button,
-input {
+input,
+textarea {
   font-family: var(--font-main);
   color: #2c3e50;
 }
@@ -73,8 +74,8 @@ a {
 
 .input {
   height: 30px;
+  width: 100%;
   padding: 0 10px;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   border: 1px solid #000000;
