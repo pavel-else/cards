@@ -1,14 +1,8 @@
 import { createStore } from 'vuex';
+import initStorage from '@/functions/initStorage';
+import saveToStorage from '@/functions/saveToStorage';
 
-// При первой инициализации в сторе должны быть 2 дефолтные карточки
-if (!localStorage.getItem('isFirstInit')) {
-  localStorage.setItem('cards', JSON.stringify([
-    { id: 1, title: 'Первая карточка', description: 'Description' },
-    { id: 2, title: 'Вторая карточка', description: 'Description' },
-  ]));
-
-  localStorage.setItem('isFirstInits', true);
-}
+initStorage();
 
 const store = createStore({
   state: {
@@ -25,7 +19,7 @@ const store = createStore({
     },
   },
   actions: {
-    addCard({ getters, commit }, { title, description }) {
+    addCard({ getters, commit, dispatch }, { title, description }) {
       const ids = getters.cards.map((i) => i.id);
       const maxId = Math.max(...ids);
       const newId = maxId ? maxId + 1 : 1;
@@ -37,6 +31,10 @@ const store = createStore({
       };
 
       commit('card', card);
+      dispatch('saveCardsToStorage');
+    },
+    saveCardsToStorage({ getters }) {
+      saveToStorage('cards', getters.cards);
     },
   },
 });
