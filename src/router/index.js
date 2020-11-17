@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/cards/create',
     name: 'CardCreate',
-    component: () => import('@/views/Card'),
+    component: () => import('@/views/CardCreate'),
     props: (route) => ({ ...route.query, ...route.params }),
   },
   {

@@ -20,8 +20,25 @@ const store = createStore({
     },
   },
   mutations: {
+    card({ state }, card) {
+      console.log('state', state);
+      state.cards.push(card);
+    },
   },
   actions: {
+    addCard({ getters, commit }, { title, description }) {
+      const ids = getters.cards.map((i) => i.id);
+      const maxId = Math.max(...ids);
+      const newId = maxId ? maxId + 1 : 1;
+
+      const card = {
+        id: newId,
+        title,
+        description,
+      };
+
+      commit('card', card);
+    },
   },
 });
 

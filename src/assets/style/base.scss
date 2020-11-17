@@ -3,11 +3,16 @@ body {
   margin: 0;
   padding: 0;
 }
-html {
+html,
+a,
+button,
+input {
   font-family: var(--font-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -48,5 +53,33 @@ html {
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, .3);
+  }
+
+  &--second {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    color: #000000;
+  }
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  .btn:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.input {
+  height: 30px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
+
+  &:focus {
+    outline: 1px solid #000000;
   }
 }

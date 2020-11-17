@@ -3,7 +3,7 @@
     <div class="container">
       <div class="wrap">
         <h1 class="page__title">Cards</h1>
-        <button class="btn btn-primary">Добавить</button>
+        <router-link class="btn btn-primary" to="/cards/create">Добавить</router-link>
       </div>
 
       <Cards class="page__cards" :cards="cards" />
@@ -22,7 +22,6 @@ export default {
     Cards,
   },
   setup() {
-    console.log('TH', store.getters.cards);
     const cards = ref(store.getters.cards);
 
     return {
