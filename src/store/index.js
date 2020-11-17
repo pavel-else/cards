@@ -20,8 +20,7 @@ const store = createStore({
     },
   },
   mutations: {
-    card({ state }, card) {
-      console.log('state', state);
+    card(state, card) {
       state.cards.push(card);
     },
   },
