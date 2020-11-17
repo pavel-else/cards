@@ -50,7 +50,7 @@ export default {
 .cards {
   display: grid;
   // grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, calc(25% - 20px));
   grid-gap: 25px;
 
   &__card {

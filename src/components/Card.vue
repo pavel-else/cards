@@ -25,7 +25,7 @@ export default {
 
 <style scoped lang="scss">
 .card {
-  max-width: 220px;
+  // max-width: 220px;
   min-height: 80px;
   padding: 10px 10px 10px;
   border: 1px solid var(--color-black);
