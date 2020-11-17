@@ -17,6 +17,9 @@ const store = createStore({
     card(state, card) {
       state.cards.push(card);
     },
+    cards(state, cards) {
+      state.cards = cards;
+    },
   },
   actions: {
     addCard({ getters, commit, dispatch }, { title, description }) {
@@ -31,6 +34,10 @@ const store = createStore({
       };
 
       commit('card', card);
+      dispatch('saveCardsToStorage');
+    },
+    saveCards({ commit, dispatch }, cards) {
+      commit('cards', cards);
       dispatch('saveCardsToStorage');
     },
     saveCardsToStorage({ getters }) {

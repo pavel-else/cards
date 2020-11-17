@@ -1,20 +1,37 @@
 <template>
-  <div class="cards">
-    <template v-for="item in cards" :key="item.id">
+  <draggable class="dragArea list-group w-full cards" v-model="inCards" @change="changeCards">
+    <template v-for="item in inCards" :key="item.id">
       <Card class="cards__card" :value="item"/>
     </template>
-  </div>
+  </draggable>
 </template>
 
 <script>
+import { ref } from 'vue';
+import store from '@/store';
+import { VueDraggableNext } from 'vue-draggable-next';
 import Card from '@/components/Card.vue';
 
 export default {
   components: {
     Card,
+    draggable: VueDraggableNext,
   },
   props: {
     cards: Array,
+  },
+  setup(props) {
+    const cards = props.cards.map((i) => ({ ...i }));
+
+    return {
+      inCards: ref(cards),
+    };
+  },
+  methods: {
+    changeCards(cards) {
+      store.dispatch('saveCards', this.inCards);
+      console.log('E', cards);
+    },
   },
 };
 </script>
