@@ -26,6 +26,10 @@ const store = createStore({
       card.title = title;
       card.description = description;
     },
+    deleteCard(state, id) {
+      const filter = state.cards.filter((i) => i.id !== Number(id));
+      state.cards = filter;
+    },
     cards(state, cards) {
       state.cards = cards;
     },
@@ -47,6 +51,10 @@ const store = createStore({
     },
     changeCard({ commit, dispatch }, card) {
       commit('changeCard', card);
+      dispatch('saveCardsToStorage');
+    },
+    deleteCard({ commit, dispatch }, id) {
+      commit('deleteCard', id);
       dispatch('saveCardsToStorage');
     },
     saveCards({ commit, dispatch }, cards) {

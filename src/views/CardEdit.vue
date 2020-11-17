@@ -55,6 +55,16 @@ export default {
 
       this.$router.push('/cards');
     },
+    deleteCard() {
+      // eslint-disable-next-line
+      const response = confirm('Вы действительно хотите удалить эту карточку?');
+      if (!response) {
+        return;
+      }
+      store.dispatch('deleteCard', this.cardId);
+
+      this.$router.push('/cards');
+    },
   },
 };
 </script>
