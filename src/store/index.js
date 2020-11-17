@@ -18,8 +18,13 @@ const store = createStore({
     },
   },
   mutations: {
-    card(state, card) {
+    addCard(state, card) {
       state.cards.push(card);
+    },
+    changeCard(state, { id, title, description }) {
+      const card = state.cards.find((i) => i.id === Number(id));
+      card.title = title;
+      card.description = description;
     },
     cards(state, cards) {
       state.cards = cards;
@@ -37,7 +42,11 @@ const store = createStore({
         description,
       };
 
-      commit('card', card);
+      commit('addCard', card);
+      dispatch('saveCardsToStorage');
+    },
+    changeCard({ commit, dispatch }, card) {
+      commit('changeCard', card);
       dispatch('saveCardsToStorage');
     },
     saveCards({ commit, dispatch }, cards) {
