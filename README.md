@@ -6,6 +6,8 @@
 
 http://f0487783.xsph.ru/cards
 
+https://cp.sprinthost.ru/customer/domains/show?domain=f0487783.xsph.ru
+
 ## Project setup
 ```
 npm install
